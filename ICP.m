@@ -5,11 +5,9 @@ MIDI = {'C', 0; 'C#', 1; 'Db', 1; 'D', 2; 'D#', 3; 'Eb', 3;
 [MidiRow,MidiCol] = size(MIDI);
 i = 1;
 
-for letter = i:MidiRow
-    stringcomp = STRCMP(note,MIDI(i));
-    if stringcomp eq 1
-        output = MIDI(i,2);
+for letter = i:MidiRow % iteration is kept track of by "letter".. meaning that will be what increments.
+    compare = strcmp(note,MIDI{letter,1});
+    if compare == 1
+        output = MIDI{letter,2};
     end
 end
-
-

@@ -6,9 +6,8 @@ MIDI = {'C', 0; 'C#', 1; 'Db', 1; 'D', 2; 'D#', 3; 'Eb', 3;
 i = 1;
 
 for letter = i:MidiRow
-    if letter STRCM (note, letter)
+    stringcomp = strcmp(note,MIDI(i));
+    if stringcomp eq 1
         output = MIDI(i,2);
     end
 end
-
-
